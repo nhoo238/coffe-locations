@@ -1,0 +1,22 @@
+<%- include('layout/header') %>
+<%- include('layout/navbar') %>
+
+<h1>Danh sách địa điểm</h1>
+
+<ul>
+    <% items.forEach(item => { %>
+        <li>
+            <%= item.name %>
+
+            <% if(item.hot) { %>
+                🔥 HOT
+            <% } else { %>
+                ❄️ Bình thường
+            <% } %>
+
+            <a href="/detail/<%= item.id %>">Xem chi tiết</a>
+        </li>
+    <% }) %>
+</ul>
+
+<%- include('layout/footer') %>

@@ -1,0 +1,51 @@
+<%- include('layout/header') %>
+<%- include('layout/navbar') %>
+
+<div class="container mt-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <div class="card shadow-lg border-0">
+
+                <!-- Ảnh chính -->
+                <img src="/images/<%= item.image || 'intro.jpg' %>" class="card-img-top" alt="<%= item.name %>" style="object-fit: cover; height: 400px;">
+
+                <div class="card-body">
+
+                    <!-- Tên + badge HOT/Bình thường -->
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h2 class="card-title mb-0"><%= item.name %></h2>
+                        <% if(item.hot) { %>
+                            <span class="badge bg-danger fs-6">🔥 HOT</span>
+                        <% } else { %>
+                            <span class="badge bg-secondary fs-6">Bình thường</span>
+                        <% } %>
+                    </div>
+
+                    <!-- Mô tả -->
+                    <p class="card-text fs-5 mb-3"><%= item.description || 'Chưa có mô tả cho địa điểm này.' %></p>
+
+                    <!-- Địa chỉ và giờ mở cửa -->
+                    <% if(item.address) { %>
+                        <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i> <strong>Địa chỉ:</strong> <%= item.address %></p>
+                    <% } %>
+                    <% if(item.openingHours) { %>
+                        <p><i class="bi bi-clock-fill me-2"></i> <strong>Giờ mở cửa:</strong> <%= item.openingHours %></p>
+                    <% } %>
+
+                    <!-- Nút quay lại -->
+                    <div class="mt-4">
+                        <a href="/" class="btn btn-outline-primary">
+                            ⬅ Quay lại danh sách
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>

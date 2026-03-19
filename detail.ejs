@@ -1,0 +1,19 @@
+<%- include('layout/header') %>
+<%- include('layout/navbar') %>
+
+<h1>Chi tiết</h1>
+
+<% if(item) { %>
+    <h2><%= item.name %></h2>
+
+    <% if(item.hot) { %>
+        <p>🔥 HOT</p>
+    <% } else { %>
+        <p>Bình thường</p>
+    <% } %>
+
+<% } else { %>
+    <p>Không tìm thấy</p>
+<% } %>
+
+<%- include('layout/footer') %>
