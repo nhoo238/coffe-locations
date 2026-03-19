@@ -15,10 +15,10 @@
 npm init -y
 npm install express.ejs
 
-## chay
+## Chạy 
 node app.js
 
-truy cap: http://localhost:3000
+truy cập: http://localhost:3000
 
 ## **Bước 4: Push lên GitHub**
 
